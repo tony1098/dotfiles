@@ -21,8 +21,11 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
-" Allow cursor to move one more past end of line
-set virtualedit+=onemore
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+" show when leader key is active
+set showcmd 
 
 " Color scheme: VSCode
 set runtimepath+=~/dotfiles/vim/vim-code-dark
