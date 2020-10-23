@@ -51,13 +51,31 @@ set relativenumber
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
+" Change status line
+function! GitBranch()
+	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+	let l:branchname = GitBranch()
+	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %p%%
+set statusline+=\ %l/%L
+
 " The backspace key has slightly unintuitive behavior by default. For example,
 " by default, you can't backspace before the insertion point set with 'i'.
 " This configuration makes backspace behave more reasonably, in that you can
 " backspace over anything.
 set backspace=indent,eol,start
-" For company remote server
-noremap! <C-?> <C-h>
 
 " By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
 " shown in any window) that has unsaved changes. This is to prevent you from "
