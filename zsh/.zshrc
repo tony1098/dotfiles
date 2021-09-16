@@ -56,6 +56,15 @@ bindkey '^e' edit-command-line
 [ -f "~/.config/shortcutrc" ] && source "~/.config/shortcutrc"
 [ -f "~/.config/aliasrc" ] && source "~/.config/aliasrc"
 
+# Alias
+alias tl="tmux ls"
+alias att="tmux attach -t"
+alias cd1="cd .."
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
+
 # Load zsh-syntax-highlighting; should be last.
 # Load zsh-autosuggestions.
 source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

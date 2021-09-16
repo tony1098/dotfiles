@@ -1,4 +1,4 @@
 set ic
-set winminheight=2
-set arrowstyle=highlight
+set hls
+set arrowstyle=longarrow
 
