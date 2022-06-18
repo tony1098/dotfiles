@@ -21,9 +21,14 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
-" delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+" Insert a new-line after the current line by pressing Enter.
+nmap <CR> o<Esc>k
+
+" When you enter the line back with the p command you are pasting the contents of the (volatile) default register "", which has been overwritten by dd. But you still can paste from the (non volatile) yank register "0, which won't be overwritten by the delete command dd.
+nnoremap <leader>p "0p
+vnoremap <leader>p "0p
+nnoremap <leader>P "0P
+vnoremap <leader>P "0P
 " show when leader key is active
 set showcmd 
 
@@ -36,8 +41,6 @@ syntax on
 
 " Highlight search
 set hlsearch
-" Press return to temporarily get out of highlighted search
-nnoremap <CR> :nohlsearch<CR>
 
 " Disable the default Vim startup message.
 set shortmess+=I
