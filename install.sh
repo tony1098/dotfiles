@@ -27,5 +27,6 @@ ln -sv ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sv ~/dotfiles/vim/.vimrc ~/.vimrc
 ln -sv ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/cgdb/cgdbrc ~/.cgdb/cgdbrc
+ln -sv ~/dotfiles/gdb/.gdbinit ~/.gdbinit
 
 echo "Done!"

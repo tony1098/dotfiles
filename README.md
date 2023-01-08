@@ -5,3 +5,4 @@ Custom configuration files for:
 	* Requires zsh 4.3.11+ for syntax highlighting and autosuggestions
 * Vim
 * Tmux
+* Gdb/Cgdb
