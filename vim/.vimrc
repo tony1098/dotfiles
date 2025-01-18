@@ -24,11 +24,10 @@ set shiftwidth=4
 " Insert a new-line after the current line by pressing Enter.
 nmap <CR> o<Esc>k
 
-" When you enter the line back with the p command you are pasting the contents of the (volatile) default register "", which has been overwritten by dd. But you still can paste from the (non volatile) yank register "0, which won't be overwritten by the delete command dd.
-nnoremap <leader>p "0p
-vnoremap <leader>p "0p
-nnoremap <leader>P "0P
-vnoremap <leader>P "0P
+" Greatest remap ever
+let mapleader = " "
+xnoremap <leader>p "_dP
+
 " show when leader key is active
 set showcmd 
 
@@ -47,6 +46,8 @@ set shortmess+=I
 
 " Show line numbers.
 set number
+" Show relative line numbers.
+set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
@@ -95,6 +96,10 @@ set incsearch
 
 " Unbind some useless/annoying default key bindings.
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+
+" Map Ctrl-d and Ctrl-u to autocenter the cursor
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
